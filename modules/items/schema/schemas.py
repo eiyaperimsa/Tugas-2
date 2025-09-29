@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 from typing import Optional
 from datetime import datetime
@@ -54,10 +55,20 @@ class Item(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="Waktu pembuatan user (jika tidak diisi, isi otomatis di backend)")
     updated_at: Optional[datetime] = Field(default=None, description="Waktu update terakhir user (jika tidak diisi, isi otomatis di backend)")
     model_config = ConfigDict(extra="forbid")
+=======
+from typing import Optional
+from pydantic import BaseModel
+class Item(BaseModel):
+    id: int
+    name: str
+    description: Optional [str] = None
+    price: float
+>>>>>>> b0f0be8eecbe811b5eb1b81cc8bc972f9477ed60
 
 
 class ItemResponse(BaseModel):
     id: int
+<<<<<<< HEAD
     username: str
     email: EmailStr
     password: str
@@ -69,3 +80,11 @@ class ResponseModel(BaseModel):
   success: bool
   message: str
   data: ItemResponse
+=======
+    name: str
+
+class ResponseModel(BaseModel):
+    success: bool
+    message:str
+    data: ItemResponse
+>>>>>>> b0f0be8eecbe811b5eb1b81cc8bc972f9477ed60
