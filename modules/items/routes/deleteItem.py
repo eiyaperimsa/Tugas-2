@@ -4,7 +4,7 @@ from modules.items.routes.createItem import items
 
 router = APIRouter()
 
-@router.delete("/items/{item_id}")
+@router.delete("/delete/{item_id}")
 def delete_item(item_id: int):
     for index, item in enumerate(items):
         if item.id == item_id:
